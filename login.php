@@ -1,7 +1,7 @@
 <?php
  $ser="localhost";
- $dbname="dcteam_dcteam";
- $pas="VpHqYKuT45cbV";
+ $dbname="";
+ $pas="";
 $dsn = "mysql:host=localhost;dbname=dcteam_dcteam;charset=utf8mb4";
 $options = [
   PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
