@@ -1,23 +1,5 @@
 <?php
- $ser="localhost";
- $dbname="";
- $pas="";
-$dsn = "mysql:host=localhost;dbname=dcteam_dcteam;charset=utf8mb4";
-$options = [
-  PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
-  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, //turn on errors in the form of exceptions
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //make the default fetch be an associative array
-];
-try {
-  $link = new PDO($dsn, "dcteam_dcteam", "VpHqYKuT45cbV", $options);
-} catch (Exception $e) {
-  error_log($e->getMessage());
-  exit('Something weird happened'); //something a user can understand
-}
-
- session_start();
-// Check connection
-?>
+ 
  <!DOCTYPE html>
 <html>
 <head>
@@ -226,61 +208,7 @@ function validateForm() {
 </form>
 
 	
-	 <?php
-	 $name=$_POST['username'];
-	 $pass=$_POST['password'];
-	 if(!empty($name) && !empty($pass)){
- //if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-	 echo $_POST['g-recaptcha'];
-	 $url=" https://www.google.com/recaptcha/api/siteverify";
-	 $pap_k="6LcwgMsZAAAAADPSjYm8ZxxjdkrdQxyHepjPlvJs";
-	 	    $secretAPIkey = '6LcwgMsZAAAAAOm2MIDmGMhlZ3rXq0EEUBLKAai';
-
-                // reCAPTCHA response verification
-                $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LcwgMsZAAAAAOm2MIDmGMhlZ3rXq0EEUBLKAai-&response='.$_POST['g-recaptcha-response']);
-      $us= $_POST["username"] ;
-     // echo  $verifyResponse;
-     // echo $_POST['g-recaptcha-response'];
-           $password = $_POST["password"];
-            $response = json_decode($verifyResponse);
-                   
-$_SESSION['username']=$us;
-    if(isset($_POST["login1"]))// عدل هذا فقط
-    
-        { //if($response->success){
-            $count= 0;
-//$res = mysqli_query($link,"SELECT * FROM exam WHERE username = '$_POST[username]'   && password = '$_POST[password]' " ) ;
-$count = mysqli_num_rows ($res) ;
- $stmt = $link->prepare("SELECT * FROM exam WHERE username = '$_POST[username]'  && password = '$_POST[password]' " ) ;
-    $stmt->execute();
-    $arr = $stmt->fetchAll(PDO::FETCH_CLASS);
-if(!$arr) 
-
-{
-  
-  ?>
-	<?php
-
-// current time
-date('h:i:s') ;
-
-// sleep for 10 seconds
-sleep(10);
-
-// wake up !
- date('h:i:s');
-
-?>
-    <script type="text/javascript">
-     document.getElementById("filer").style.display ="inline";
-   
-    </script>
-   <?php 
-    exit('No rows');
-}
-
-else {
-            ?>
+	
 	
     </script>
         <script type="text/javascript">
@@ -288,38 +216,20 @@ else {
     </script>
    
     </script>
-   <?php }
-           
-      
-   // }
-      /*  else{ 
-               
-                    
-                  ?>
+ 
 	
     <script type="text/javascript">
      document.getElementById("cap").style.display ="inline";
    
     </script>
-   <?php 
-            
-            }  */   
-        }
-         
-	    
-	
-	// }
-	/*  else { 
-	      ?>
+  
 	
     <script type="text/javascript">
      document.getElementById("bot").style.display ="inline";
    
     </script>
-   <?php 
-	  }*/}
+ 
 
-?>
 </div>
 </div>
 </body>
