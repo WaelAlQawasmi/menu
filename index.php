@@ -367,7 +367,7 @@ Show menu
     <a href="https://dc-team.team/">dc-team.team</a>
   </div>
   <!-- Copyright -->
-
+<?php echo " copy " ?>
 </footer>
 <!-- Footer -->
   </body>
